@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All goods</title>
+</head>
+<body>
+<h1>All goods</h1>
+<a th:href="@{/goods/add}">add good</a><br/>
+<ul>
+    <li th:each="good : ${goods}">
+        <div th:text="${good.id}"></div>
+        <div th:text="${good.name}"></div>
+        <div th:text="${good.price}"></div>
+        <form method="post" th:action="@{/goods/delete/}"><input  name="id" id="id" type="hidden" th:value="${good.id}"><input type="submit" value="delete"></form>
+    </li>
+</ul>
+</body>
+</html>
