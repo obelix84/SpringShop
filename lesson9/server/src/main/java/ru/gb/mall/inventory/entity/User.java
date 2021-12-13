@@ -14,19 +14,19 @@ public class User {
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "USERNAME", unique = true)
+    @Column(name = "USERNAME", unique = true, nullable = false)
     private String username;
 
-    @Column(name = "PASSWORD")
+    @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Column(name = "FIRST_NAME", length = 50)
+    @Column(name = "FIRST_NAME", length = 50, nullable = false)
     private String firstname;
 
-    @Column(name = "LAST_NAME", length = 50)
+    @Column(name = "LAST_NAME", length = 50, nullable = false)
     private String lastname;
 
-    @Column(name = "EMAIL")
+    @Column(name = "EMAIL", nullable = false)
     private String email;
 
     @ManyToMany(fetch = FetchType.LAZY)
