@@ -1,0 +1,26 @@
+server:
+  servlet:
+    context-path: /api/v1
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springshopnew
+    username: root
+    password: 12345
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+  mail:
+    host: smtp.google.com
+    port: 587
+    username: <changeit>
+    password: <changeit>
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
