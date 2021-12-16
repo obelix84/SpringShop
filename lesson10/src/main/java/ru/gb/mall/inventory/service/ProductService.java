@@ -1,5 +1,7 @@
 package ru.gb.mall.inventory.service;
 
+
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import ru.gb.mall.inventory.entity.Product;
 import ru.gb.mall.inventory.exception.EntityNotFoundException;
@@ -32,12 +34,14 @@ public class ProductService {
     }
 
     public void deleteById(long id) {
-        productRepository.deleteById(id);
-    }
+        try {
+            productRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
+            throw new EntityNotFoundException("Product entity no found by id: " + id, e);
+        }
+     }
 
     public Product save(Product product) {
         return productRepository.save(product);
     }
-
-
 }

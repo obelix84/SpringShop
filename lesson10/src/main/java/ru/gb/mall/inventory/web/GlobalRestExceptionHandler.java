@@ -1,5 +1,6 @@
 package ru.gb.mall.inventory.web;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,6 +14,11 @@ public class GlobalRestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({EntityNotFoundException.class})
     public ResponseEntity<ApiError> handleNotFound(EntityNotFoundException ex) {
+        return new ResponseEntity<>(new ApiError(ex.getMessage()), HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler({EmptyResultDataAccessException.class})
+    public ResponseEntity<ApiError> handleNotFound(EmptyResultDataAccessException ex) {
         return new ResponseEntity<>(new ApiError(ex.getMessage()), HttpStatus.NOT_FOUND);
     }
 

@@ -3,10 +3,8 @@ package ru.gb.mall.inventory.web;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.gb.mall.inventory.entity.Product;
 import ru.gb.mall.inventory.entity.ProductPrice;
 import ru.gb.mall.inventory.service.ProductPriceService;
-import ru.gb.mall.inventory.service.ProductService;
 
 import java.net.URI;
 import java.util.List;
@@ -32,9 +30,9 @@ public class ProductPriceController {
     }
 
     @DeleteMapping("/{id}")
-    public int deleteById(@PathVariable("id") long id) {
+    public ResponseEntity<Long> deleteById(@PathVariable("id") long id) {
         productPriceService.deleteById(id);
-        return HttpStatus.ACCEPTED.value();
+        return ResponseEntity.ok(id);
     }
 
     @PostMapping
