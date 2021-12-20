@@ -9,14 +9,9 @@ import java.io.Serializable;
 @Data
 @Table (name = "WAREHOUSE_ITEM")
 public class WarehouseItem implements Serializable {
-    //warehouseId, productId, amount
-    @Id
-    @OneToOne
-    @JoinColumn(name = "warehouse_id", referencedColumnName = "id")
-    private Warehouse warehouse;
-    @Id
-    @OneToOne
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
-    private Product product;
+    // чуть упрощаем
+    // считаем, что на товар может быть только на одном складе
+    @EmbeddedId
+    private WarehouseItemId warehouseItemId;
     private long amount;
 }

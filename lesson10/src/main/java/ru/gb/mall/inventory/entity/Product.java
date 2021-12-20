@@ -19,7 +19,7 @@ import java.util.List;
 @Table(name = "PRODUCTS")
 @Entity
 @Data
-public class Product implements Serializable {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")

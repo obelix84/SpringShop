@@ -18,4 +18,5 @@ public class WarehouseKeeper {
 
     @Column(name = "EMAIL")
     private String email;
+
 }
