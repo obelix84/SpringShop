@@ -13,12 +13,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.List;
 
 @Table(name = "PRODUCTS")
 @Entity
 @Data
-public class Product {
+public class Product implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
@@ -66,4 +67,15 @@ public class Product {
             foreignKey = @ForeignKey(name = "FK_PRODUCT_DISCOUNT_PRODUCT_ID_RELATION")
     )
     private ProductDiscount discount;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", category=" + category +
+                ", price=" + price +
+                ", discount=" + discount +
+                '}';
+    }
 }

@@ -3,11 +3,12 @@ package ru.gb.mall.inventory.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "WAREHOUSE")
 @Entity
 @Data
-public class Warehouse {
+public class Warehouse implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
