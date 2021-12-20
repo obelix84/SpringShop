@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import ru.gb.mall.inventory.entity.Warehouse;
 
 @Repository
-public interface WarehouseRepository extends CrudRepository<Long, Warehouse> {
+public interface WarehouseRepository extends CrudRepository<Warehouse, Long> {
 }
