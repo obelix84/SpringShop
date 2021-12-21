@@ -35,6 +35,10 @@ public class EmailServiceImpl implements EmailService {
         try {
             sender.send(simpleMailMessage);
         } catch (MailException e) {
+            System.out.println(e.toString());
+            e.printStackTrace();
+            log.debug("While sending the mail the error occurred.");
+            log.debug("Mail message: {}", message);
             log.debug("While sending the mail the error occurred.");
             log.debug("Mail message: {}", message);
             throw new MailSenderException("Something when wrong while sending the mail.", e);
