@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>Java Spring Online Shop</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-4">Online Shop</span>
+        </a>
+    </header>
+
+    <main>
+        <h1>Login form!</h1>
+        <div class="mb-5">
+            <form name="f" th:action="@{/login}" method="post">
+                <fieldset>
+                    <legend>Please Login</legend>
+                    <div th:if="${param.error}" class="alert alert-danger">
+                        Invalid username and password.
+                    </div>
+                    <div th:if="${param.logout}" class="alert alert-success">
+                        You have been logged out.
+                    </div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username"/>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"/>
+                    <div class="form-actions">
+                        <button type="submit" class="btn">Log in</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+
+
+    </main>
+    <footer class="pt-5 my-5 text-muted border-top">
+        Dmitry Putilin &middot; &copy; 2021
+    </footer>
+</div>
+
+</body>
+</html>
