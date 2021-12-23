@@ -6,7 +6,7 @@
     </formats>
     <!--  END SNIPPET: formats  -->
     <!--  START SNIPPET: fileSets  -->
-<!--    <fileSets>-->
+    <fileSets>
 <!--        <fileSet>-->
 <!--            <directory>src/bin</directory>-->
 <!--            <outputDirectory>bin</outputDirectory>-->
@@ -24,13 +24,20 @@
 <!--            <lineEnding>unix</lineEnding>-->
 <!--            <fileMode>0755</fileMode>-->
 <!--        </fileSet>-->
-<!--        <fileSet>-->
-<!--            <directory>target</directory>-->
-<!--            <outputDirectory>lib</outputDirectory>-->
-<!--            <includes>-->
-<!--                <include>generate-assembly-*.jar</include>-->
-<!--            </includes>-->
-<!--        </fileSet>-->
-<!--    </fileSets>-->
+        <fileSet>
+            <directory>${basedir}/../application/target/</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${basedir}/../application/config/</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>*.properties</include>
+            </includes>
+        </fileSet>
+    </fileSets>
 <!--    &lt;!&ndash;  END SNIPPET: fileSets  &ndash;&gt;-->
 </assembly>

@@ -35,7 +35,7 @@
             <descriptors>
             <descriptor>assembly.xml</descriptor>
             </descriptors>
-            <finalName>apache-maven-cookbook-${pom.version}</finalName>
+            <finalName>delivery</finalName>
         </configuration>
         <executions>
             <execution>
