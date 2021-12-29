@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import ru.gb.entity.Good;
 
 @Repository
-public interface GoodsRepository extends CrudRepository<Good, Long> {
+public interface  GoodsRepository extends CrudRepository<Good, Long> {
 
 }

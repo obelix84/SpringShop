@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class Lesson5RestApp {
+public class Lesson78RestApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(Lesson5RestApp.class, args);
+        SpringApplication.run(Lesson78RestApp.class, args);
     }
 
 }

@@ -1,11 +1,13 @@
 package ru.gb.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "goods")
 public class Good {
     @Id
@@ -22,4 +24,12 @@ public class Good {
     public Good() {
     }
 
+    @Override
+    public String toString() {
+        return "Good{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

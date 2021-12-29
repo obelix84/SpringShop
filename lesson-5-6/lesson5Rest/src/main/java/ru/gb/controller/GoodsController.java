@@ -47,7 +47,7 @@ public class GoodsController {
     @DeleteMapping("/{id}")
     public int deleteGood(@PathVariable Long id) {
         goodsRepository.deleteById(id);
-        return HttpStatus.OK.value();
+         return HttpStatus.OK.value();
     }
 
 }
